@@ -22,4 +22,4 @@ jobs:
             cd avatars-api
             git pull
             docker build -t avatars-api .
-            docker run --name avatars-api -d -p 8000:8000  avatars-api
+            docker run --name avatars-api -d -p 8888:8888  avatars-api
