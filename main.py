@@ -13,7 +13,7 @@ async def get_avatar(user_id: int):
         raise HTTPException(500, "Database connection pool is not initialized.")
 
     try:
-        avatar = await pool.fetchval("SELECT avatar_url from AVATARS where user_id = $1", user_id)
+        avatar = await pool.fetchval("SELECT avatar_url FROM AVATARS WHERE user_id = $1", user_id)
         if not avatar:
             raise HTTPException(404, "Avatar not found.")
 
