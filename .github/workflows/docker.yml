@@ -17,9 +17,9 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 22
           script: |
-            docker stop avatars-api
-            docker rm avatars-api
-            cd avatars-api
+            docker stop api
+            docker rm api
+            cd api
             git pull
-            docker build -t avatars-api .
-            docker run --name avatars-api -d -p 8888:8888  avatars-api
+            docker build -t api .
+            docker run --name api -d -p 8888:8888  api
